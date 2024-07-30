@@ -1,0 +1,277 @@
+:root {
+  --primaryColor: #dbdbdb;
+  --bgColor: #1a1a1a;
+  --lightColor: #d3d3d3;
+  --darkColor: #444444;
+  --lightGray: #dddddd;
+  --darkGray: #777777;
+  --basicFont: sans-serif;
+  --titleFont: sans-serif;
+  --rankColor:  #ebd662;
+  --overlay:  #162d41;
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-family: var(--titleFont);
+  color: var(--primaryColor);
+  letter-spacing: .1ch;
+}
+
+*,
+body,
+p,
+picture,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bgColor);
+  color: var(--primaryColor);
+  font-family: var(--basicFont);
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+input,
+button,
+select,
+textarea {
+  font: inherit;
+  outline: none;
+  resize: none;
+  border: none;
+}
+
+button, .btn {
+  cursor: pointer;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ------------------------------------------- */
+
+body {
+  width: 90vw;
+  margin: 0 auto;
+}
+header {
+  padding: 1rem 0;
+}
+
+.pg-heading {
+  text-transform: uppercase;
+  font-size: 32px;
+  text-align: center;
+  margin: 2rem 0 1rem ;
+}
+
+.search {
+  text-align: center;
+}
+
+.search .search-box {
+  padding: .5rem 1rem;
+  width: 100%;
+  font-size: 18px;
+  border-radius: 15px;
+  margin: 2rem auto 0;
+}
+
+.search .search-box::placeholder {
+  font-size: 16px;
+  font-style: italic;
+}
+
+.sorting-radio {
+  display: none;
+}
+
+.sorting-radio .heading{
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-right: 1rem;
+}
+
+.sorting-radio label {
+  font-weight: bold;
+  color: var(--rankColor);
+  letter-spacing: .5px;
+}
+
+.sort-dropdown {
+    text-align: center;
+    display: block;
+    padding: .5rem;
+    width: 250px;
+    margin: 3rem auto 1rem;
+    background-color: var(--rankColor);
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 275px;
+  min-height: 375px;
+  padding: 1rem;
+  margin: 1rem;
+  text-align: center;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card .rank {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  top: .5rem;
+  right: .5rem;
+  background-color: var(--rankColor);
+  color: var(--bgColor);
+  z-index: 4;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card .poster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;  
+}
+
+
+
+.card .metadata {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem .5rem;
+  transition: top .5s ease-in-out;
+}
+
+.card:hover .metadata, .card:active .metadata, .card:focus .metadata  {
+  top: 0;
+}
+
+.card:hover .overlay, .card:active .overlay, .card:focus .overlay {
+  top: 0;
+}
+
+.card .overlay {
+  background-color: var(--overlay);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .9;
+  transition: top .5s ease-in-out;
+
+}
+
+.card .title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.card .year {
+  font-weight: bold;
+  margin: .1rem 0 1rem;
+}
+.card .crew {
+  margin-top: 1rem;
+}
+
+
+@media screen and (min-width:640px) {
+  .pg-heading {
+    font-size: 40px;
+  }
+
+  .search .search-box {
+    width: 400px;
+  }
+}
+
+@media screen and (min-width:876px) {
+
+  .sorting-radio {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 3rem 0 1rem 1rem;
+  }
+
+  .sort-dropdown {
+    display: none;
+  }
+}

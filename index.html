@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Top 100 Movies</title>
+</head>
+
+<body class="indexPg">
+  <header>
+    <h1 class="pg-heading">Top 100 Movies of All Time</h1>
+    <div class="search">
+      <input type="text" class="search-box" placeholder="Find a movie by title, year, rank, or actor...">
+    </div>
+  </header>
+
+  <div class="sorting-radio">
+    <p class="heading">Sort by: </p>
+    <div class="radio-grp">
+      <input class="sort-opt" type="radio" name="sort" id="rank_asc" value="rank_asc" default>
+      <label for="rank_asc">Rank &uarr;</label>
+    </div>
+    <div class="radio-grp">
+      <input class="sort-opt" type="radio" name="sort" id="rank_desc" value="rank_desc">
+      <label for="rank_desc">Rank &darr;</label>
+    </div>
+    <div class="radio-grp">
+      <input class="sort-opt" type="radio" name="sort" id="year_asc" value="year_asc" selected>
+      <label for="year_asc">Year &uarr;</label>
+    </div>
+    <div class="radio-grp">
+      <input class="sort-opt" type="radio" name="sort" id="year_desc" value="year_desc">
+      <label for="year_desc">Year &darr;</label>
+    </div>
+    <div class="radio-grp">
+      <input class="sort-opt" type="radio" name="sort" id="title_atoz" value="title_atoz">
+      <label for="title_atoz">Title (A-Z)</label>
+    </div>
+    <div class="radio-grp">
+      <input class="sort-opt" type="radio" name="sort" id="title_ztoa" value="title_ztoa">
+      <label for="title_ztoa">Title (Z-A)</label>
+    </div>
+  </div>
+
+  <select class="sort-dropdown" name="sort-drop" id="sort-drop">
+    <option value="" disabled>Sort By...</option>
+    <option value="rank_asc">Rank &uarr;</option>
+    <option value="rank_desc">Rank &darr;</option>
+    <option value="year_asc">Year &uarr;</option>
+    <option value="year_desc">Year &darr;</option>
+    <option value="title_atoz">Title (A-Z)</option>
+    <option value="title_ztoa">Title (Z-A)</option>
+  </select>
+
+  <div class="cards"></div>
+
+  <script src="./js/movies.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
